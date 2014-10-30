@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request
+import os, sys
 app = Flask(__name__)
 
 @app.route("/")
@@ -17,7 +18,7 @@ if __name__ == "__main__":
 
 @app.route('/listfiles')
 def listfiles():
-    path = "./upload/"
+    path = "./uploads/"
     dirs = os.listdir( path )
     f_str=""
     for name in dirs:
