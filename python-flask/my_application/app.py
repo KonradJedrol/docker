@@ -8,7 +8,7 @@ def hello():
     
 @app.route('/listfiles')
 def listfiles():
-    path = "./uploads/"
+    path = "./upload/"
     dirs = os.listdir( path )
     f_str=""
     for name in dirs:
