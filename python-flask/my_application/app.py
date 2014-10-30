@@ -43,11 +43,11 @@ def euler2():
 
   while temp <=4000000:
     temp = fib2
-      if temp % 2 == 0:
-        total += temp
-    temp = fib + fib2
-    fib = fib2
-    fib2 = temp
+    if temp % 2 == 0:
+      total += temp
+      temp = fib + fib2
+      fib = fib2
+      fib2 = temp
   
   result = str(total)+"\n"
   return result
