@@ -6,15 +6,6 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
     
-@app.route('/listfiles')
-def listfiles():
-    path = "./upload/"
-    dirs = os.listdir( path )
-    f_str=""
-    for name in dirs:
-        f_str +=(str)(name)+"\n"
-    return f_str
-
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
@@ -23,3 +14,12 @@ def upload_file():
     return '',201
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
+
+@app.route('/listfiles')
+def listfiles():
+    path = "./upload/"
+    dirs = os.listdir( path )
+    f_str=""
+    for name in dirs:
+        f_str +=(str)(name)+"\n"
+    return f_str
