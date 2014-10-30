@@ -24,3 +24,11 @@ def listfiles():
     for name in dirs:
         f_str +=(str)(name)+"\n"
     return f_str
+
+@app.route('/euler1')
+def run_euler1():
+  sum = 0
+  for i in range (1, 1000):
+    if i%3 or i%5:
+    sum = sum + i
+  return sum(str)
