@@ -7,6 +7,14 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
     
+@app.route('/user/<username>')
+def show_user_profile(username):
+	return 'User %s\n' % username
+	
+@app.route("/square/<int:number>")
+def squarenum(number):
+     return number*number
+
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
